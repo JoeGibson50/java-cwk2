@@ -1,21 +1,26 @@
 // TODO: Implement the BaccaratHand class in the file
 
-public class BaccaratHand {
+public class BaccaratHand extends CardCollection {
     
-    
-    public void add(BaccaratCard nineDiamonds) {
-        // TODO: implement adder
-    }
-    
-    public int size() {
-        return 0;
+    public boolean isNatural() {
+        return (value() == 8 || value() == 9) && size() == 2;
     }
     
     public int value() {
-        return -1;
+        int handValue = super.value();
+        if(handValue >= 10)
+        {
+            handValue = handValue - 10;
+        }
+        return handValue ;
     }
     
-    public boolean isNatural() {
-        return false;
+    public String toString() {
+        String handString = "";
+        for (Card card: cards) {
+            handString += card.toString() + " ";
+        }
+        return handString.trim();
     }
 }
+
