@@ -1,5 +1,3 @@
-// TODO: Implement the BaccaratHand class in the file
-
 public class BaccaratHand extends CardCollection {
     
     public boolean isNatural() {
